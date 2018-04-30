@@ -8,3 +8,15 @@ Once a person is diagnosed to have diabetes he is sure to have it for whole of h
 Objective: In our project we leverage Machine learning methods on public health data to build a system for identifying diabetic patients facing a high risk of future readmission. 
 The sensitivity is more desirable for hospitals because it is more crucial to correctly identify “high risk” patients who are to be readmitted than identifying “low risk” patients.
 
+# Installation:
+ ## Install anaconda
+ 
+ Step 1: Follow Link https://conda.io/docs/installation.html
+ 
+ Step 2: Clone Repository: `git clone git@github.com:niyatpatel23295/diabetes-readmission-prediction.git`
+ 
+ Step 3: Change directory: `cd diabetes-readmission-prediction`
+ 
+ Step 4: Navigate to web_server: `cd web_server`
+ 
+ Step 5: Start the server: `FLASK_APP=server.py flask run`
