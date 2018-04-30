@@ -8,12 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-        def predict():
-            import { predict } from "../test.py";
-            return predict.predict()
 
-    </script>
     <style>
 
     </style>
@@ -22,34 +17,310 @@
 <body>
     <div class="container-fluid">
         <div class="col-sm-9">
-            <img src="https://www.phyathai.com/photo/forms/9a973f52fd76a6833e34eea848660e8d.jpg" />
+            <div>
+                <img src="https://www.phyathai.com/photo/forms/9a973f52fd76a6833e34eea848660e8d.jpg" />
+            </div>
             <form class="form-horizontal" method = post action="/predict">
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="email">Email:</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" name = "email" id="email" placeholder="Enter email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="pwd">Password:</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-                    </div>
-                </div>
+                <label class="control-label col-sm-2">Feature Vector:</label>
+                <input type="text" name="data" />
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Remember me</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default" onclick="predict()">Submit</button>
+                        <button type="submit" class="btn btn-default">Submit</button>
                     </div>
                 </div>
             </form>
+            <!-- <form class="form-horizontal" method = post action="/predict">
+
+                <!-- Race -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2" >Race:</label>
+                    <select name="race">
+                        <option value="Caucasian">Caucasian</option>
+                        <option value="AfricanAmerican">AfricanAmerican</option>
+                        <option value="Other">Other</option>
+                        <option value="Asian">Asian</option>
+                        <option value="Hispanic">Hispanic</option>
+                    </select>
+                </div>
+
+                <!-- age -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">Age Group:</label>
+                    <select name="age">
+                        <option value="[0-10)"> [0-10) </option>
+                        <option value="[10-20)"> [10-20) </option>
+                        <option value="[20-30)"> [20-30) </option>
+                        <option value="[30-40)"> [30-40) </option>
+                        <option value="[40-50)"> [40-50) </option>
+                        <option value="[50-60)"> [50-60) </option>
+                        <option value="[60-70)"> [60-70) </option>
+                        <option value="[70-80)"> [70-80) </option>
+                        <option value="[80-90)"> [80-90) </option>
+                        <option value="[90-100)"> [90-100) </option>
+                    </select>
+                </div> -->
+
+                <!-- Gender -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">Gender:</label>
+                    <select name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div> -->
+
+                <!-- Admission Type ID -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2"> Admission Type:</label>
+                    <select name="admission_type_id">
+                        <option value="1"> 	Emergency </option>
+                        <option value="2"> 	Urgent </option>
+                        <option value="3"> 	Elective </option>
+                        <option value="4">	Newborn </option>
+                        <option value="5"> 	Not Available </option>
+                        <option value="6"> 	NULL </option>
+                        <option value="7"> 	Trauma Center </option>
+                        <option value="8"> 	Not Mapped </option>
+
+                    </select>
+                </div> -->
+
+                <!--discharge_disposition_id -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2"> Discharge Disposition:</label>
+                    <select name="discharge_disposition_id">
+                        <option value="1">	Discharged to home </option>
+                        <option value="2">	Discharged/transferred to another short term hospital </option>
+                        <option value="3">	Discharged/transferred to SNF </option>
+                        <option value="4">	Discharged/transferred to ICF </option>
+                        <option value="5">	Discharged/transferred to another type of inpatient care institution </option>
+                        <option value="6">	Discharged/transferred to home with home health service </option>
+                        <option value="7">	Left AMA </option>
+                        <option value="8">	Discharged/transferred to home under care of Home IV provider </option>
+                        <option value="9">	Admitted as an inpatient to this hospital </option>
+                        <option value="10">	Neonate discharged to another hospital for neonatal aftercare </option>
+                        <option value="11">	Expired </option>
+                        <option value="12">	Still patient or expected to return for outpatient services </option>
+                        <option value="13">	Hospice / home </option>
+                        <option value="14">	Hospice / medical facility </option>
+                        <option value="15">	Discharged/transferred within this institution to Medicare approved swing bed </option>
+                        <option value="16">	Discharged/transferred/referred another institution for outpatient services </option>
+                        <option value="17">	Discharged/transferred/referred to this institution for outpatient services </option>
+                        <option value="18">	NULL </option>
+                        <option value="19">	Expired at home. Medicaid only, hospice. </option>
+                        <option value="20">	Expired in a medical facility. Medicaid only, hospice. </option>
+                        <option value="21">	Expired, place unknown. Medicaid only, hospice. </option>
+                        <option value="22">	Discharged/transferred to another rehab fac including rehab units of a hospital . </option>
+                        <option value="23">	Discharged/transferred to a long term care hospital. </option>
+                        <option value="24">	Discharged/transferred to a nursing facility certified under Medicaid but not certified under Medicare. </option>
+                        <option value="25">	Not Mapped </option>
+                        <option value="26">	Unknown/Invalid </option>
+                        <option value="30">	Discharged/transferred to another Type of Health Care Institution not Defined Elsewhere </option>
+                        <option value="27">	Discharged/transferred to a federal health care facility. </option>
+                        <option value="28">	Discharged/transferred/referred to a psychiatric hospital of psychiatric distinct part unit of a hospital </option>
+                        <option value="29">	Discharged/transferred to a Critical Access Hospital (CAH). </option>
+                    </select>
+                </div> -->
+
+                <!-- admission_source_id -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">Admission Source:</label>
+                    <select name="admission_source_id">
+                        <option value="1">	 Physician Referral </option>
+                        <option value="2">	Clinic Referral </option>
+                        <option value="3">	HMO Referral </option>
+                        <option value="4">	Transfer from a hospital </option>
+                        <option value="5">	 Transfer from a Skilled Nursing Facility (SNF) </option>
+                        <option value="6">	 Transfer from another health care facility </option>
+                        <option value="7">	 Emergency Room </option>
+                        <option value="8">	 Court/Law Enforcement </option>
+                        <option value="9">	 Not Available </option>
+                        <option value="10">	 Transfer from critial access hospital </option>
+                        <option value="11">	Normal Delivery </option>
+                        <option value="12">	 Premature Delivery </option>
+                        <option value="13">	 Sick Baby </option>
+                        <option value="14">	 Extramural Birth </option>
+                        <option value="15">	Not Available </option>
+                        <option value="17">	NULL </option>
+                        <option value="18">	 Transfer From Another Home Health Agency </option>
+                        <option value="19">	Readmission to Same Home Health Agency </option>
+                        <option value="20">	 Not Mapped </option>
+                        <option value="21">	Unknown/Invalid </option>
+                        <option value="22">	 Transfer from hospital inpt/same fac reslt in a sep claim </option>
+                        <option value="23">	 Born inside this hospital </option>
+                        <option value="24">	 Born outside this hospital </option>
+                        <option value="25">	 Transfer from Ambulatory Surgery Center </option>
+                        <option value="26">	Transfer from Hospice </option>
+                    </select>
+                </div> -->
+
+                <!-- time_in_hospital -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">days spent in hospital:</label>
+                    <select name="time_in_hospital">
+                        <option value="0" >0 </option>
+                        <option value="1" >1 </option>
+                        <option value="2" >2 </option>
+                        <option value="3" >3 </option>
+                        <option value="4" >4 </option>
+                        <option value="5" >5 </option>
+                        <option value="6" >6 </option>
+                        <option value="7" >7 </option>
+                        <option value="8" >8 </option>
+                        <option value="9" >9 </option>
+                        <option value="10" >10 </option>
+                        <option value="11" >11 </option>
+                        <option value="12" >12 </option>
+                        <option value="13" >13 </option>
+                        <option value="14" >14 </option>
+                    </select>
+                </div> -->
+
+                <!-- num_lab_procedures -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">Lab procedures so far:</label>
+                    <input type="text" name="num_lab_procedures" />
+                </div> -->
+
+                <!-- num_procedures -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">Procedures to assist diagnosis:</label>
+                    <input type="text" name="num_procedures" />
+                </div> -->
+
+                <!-- number_outpatient -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">number_outpatient:</label>
+                    <input type="text" name="number_outpatient" />
+                </div> -->
+
+                <!-- number_emergency -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">number_emergency:</label>
+                    <input type="text" name="number_emergency" />
+                </div> -->
+
+                <!-- number_inpatient -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">number_inpatient:</label>
+                    <input type="text" name="number_inpatient" />
+                </div> -->
+
+                <!-- diag_1 -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">diag_1:</label>
+                    <input type="text" name="diag_1" />
+                </div> -->
+
+                <!-- number_diagnoses -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">number_diagnoses:</label>
+                    <input type="text" name="number_diagnoses" />
+                </div> -->
+
+                <!-- max_glu_serum -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">max_glu_serum:</label>
+                    <select name="max_glu_serum">
+                        <option value="None"> None</option>
+                        <option value=">300"> >300</option>
+                        <option value="Norm"> Norm</option>
+                        <option value=">200"> 200</option>
+                    </select>
+                </div> -->
+
+                <!-- A1Cresult -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">A1Cresult:</label>
+                    <select name="A1Cresult">
+                        <option value="None">None </option> 
+                        <option value=">7">>7</option> 
+                        <option value=">8">>8</option> 
+                        <option value="Norm">Norm</option>
+                    </select>
+                </div> -->
+
+                <!-- metfornin -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">metfornin:</label>
+                    <select name="metfornin">
+                        <option value="No">No </option>
+                        <option value="Steady">Steady</option>
+                        <option value="Up">Up</option>
+                        <option value="Down">Down</option>
+                    </select>
+                </div> -->
+
+                <!-- glimepiride -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">glimepiride:</label>
+                    <select name="glimepiride">
+                        <option value="No">No </option>
+                        <option value="Steady">Steady</option>
+                        <option value="Up">Up</option>
+                        <option value="Down">Down</option>
+                    </select>
+                </div> -->
+
+                <!-- glyburide -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">glyburide:</label>
+                    <select name="glyburide">
+                        <option value="No">No </option>
+                        <option value="Steady">Steady</option>
+                        <option value="Up">Up</option>
+                        <option value="Down">Down</option>
+                    </select>
+                </div> -->
+
+                <!-- pioglitazone -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">pioglitazone:</label>
+                    <select name="pioglitazone">
+                        <option value="No">No </option>
+                        <option value="Steady">Steady</option>
+                        <option value="Up">Up</option>
+                        <option value="Down">Down</option>
+                    </select>
+                </div> -->
+
+                <!-- rosiglitazone -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">rosiglitazone:</label>
+                    <select name="rosiglitazone">
+                        <option value="No">No </option>
+                        <option value="Steady">Steady</option>
+                        <option value="Up">Up</option>
+                        <option value="Down">Down</option>
+                    </select>
+                </div> -->
+
+                <!-- change -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">Did you change your Medication:</label>
+                    <select name="change">
+                        <option value="Ch">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div> -->
+
+                <!-- diabetesMed -->
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">Had you been prescribed any diabetes medicine before?:</label>
+                    <select name="diabetesMed">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" >Submit</button>
+                    </div>
+                </div> -->
+            </form> 
         </div>
     </div>
 </body>
