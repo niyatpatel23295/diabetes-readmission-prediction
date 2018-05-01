@@ -8,6 +8,8 @@ Once a person is diagnosed to have diabetes he is sure to have it for whole of h
 Objective: In our project we leverage Machine learning methods on public health data to build a system for identifying diabetic patients facing a high risk of future readmission. 
 The sensitivity is more desirable for hospitals because it is more crucial to correctly identify “high risk” patients who are to be readmitted than identifying “low risk” patients.
 
+Dataset: https://archive.ics.uci.edu/ml/datasets/diabetes+130-us+hospitals+for+years+1999-2008
+
 # Installation:
  ## Install anaconda
  
